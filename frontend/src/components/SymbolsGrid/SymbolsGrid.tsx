@@ -1,3 +1,5 @@
+import './symbosGrid.css';
+
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux';
 
@@ -22,8 +24,9 @@ const SymbolsGrid = ({ onSymbolClick, symbolId }: SymbolsGridProps) => {
 
   return (
     <div className={`symbolsView__cards ${hasSelected ? 'cards__active' : ''}`}>
-      {stockSymbols.map((id, i) => (
-        <Card price={prices[id]} onClick={onSymbolClick} key={i} id={id} symbolId={symbolId} />
+      {/* remove (i = index) and add id as the key more predictable and will not run in unexpected behaviours */}
+      {stockSymbols.map((id) => (
+        <Card price={prices[id]} onClick={onSymbolClick} key={id} id={id} symbolId={symbolId} />
       ))}
     </div>
   );

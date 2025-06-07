@@ -8,7 +8,7 @@ import { formatCurrencyUsd } from '@/utils/formatCurrencyUsd';
 import CardHeader from './CardHeader';
 import CardPrice from './CardPrice';
 import CardBody from './CardBody';
-import { useCardEffects } from './useCardEffects';
+import { useCardEffects } from '../../hooks/useCardEffects';
 import { cn } from '@/utils/cn';
 
 type CardProps = {

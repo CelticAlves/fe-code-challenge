@@ -5,14 +5,19 @@ import { setActiveSymbol, selectActiveSymbol } from '@/store/dashboardOptionsSli
 import SymbolsGrid from '@/components/SymbolsGrid';
 import PriceChart from '@/components/PriceChart';
 import DesktopInfo from './src/DesktopInfo';
+import { useCallback } from 'react';
 
 const SymbolsView = () => {
+  console.log('SymbolsView rendered');
   const dispatch = useAppDispatch();
   const activeSymbol = useAppSelector(selectActiveSymbol);
 
-  const handleSymbolClick = (symbolId: string) => {
-    dispatch(setActiveSymbol(activeSymbol === symbolId ? null : symbolId));
-  };
+  const handleSymbolClick = useCallback(
+    (symbolId: string) => {
+      dispatch(setActiveSymbol(activeSymbol === symbolId ? null : symbolId));
+    },
+    [activeSymbol, dispatch]
+  );
 
   return (
     <div className="symbolsView">

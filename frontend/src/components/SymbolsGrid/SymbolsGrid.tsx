@@ -12,7 +12,8 @@ type SymbolsGridProps = {
   symbolId: string | null;
 };
 
-const SymbolsGrid = ({ onSymbolClick, symbolId }: SymbolsGridProps) => {
+const SymbolsGrid = React.memo(({ onSymbolClick, symbolId }: SymbolsGridProps) => {
+  console.log('SymbolsGrid rendered');
   const stockSymbols = useAppSelector(selectors.selectStockIds);
   const prices = useAppSelector((state) => state.prices);
   const dispatch = useAppDispatch();
@@ -30,6 +31,6 @@ const SymbolsGrid = ({ onSymbolClick, symbolId }: SymbolsGridProps) => {
       ))}
     </div>
   );
-};
+});
 
 export default SymbolsGrid;

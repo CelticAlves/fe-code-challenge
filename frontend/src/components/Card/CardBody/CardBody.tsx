@@ -10,7 +10,7 @@ type CardBodyProps = {
   industry: string;
   marketCap: string;
 };
-const CardBody: React.FC<CardBodyProps> = React.memo(({ companyName, industry, marketCap }) => {
+const CardBody = React.memo(({ companyName, industry, marketCap }: CardBodyProps) => {
   //If there where more listItems i would consider using a map function to render them reducing code duplication
   //But since there are only 3, I will keep it simple
   return (

@@ -4,7 +4,7 @@ import React from 'react';
 type CardPriceProps = {
   price: string;
 };
-const CardPrice: React.FC<CardPriceProps> = React.memo(({ price }: CardPriceProps) => {
+const CardPrice = React.memo(({ price }: CardPriceProps) => {
   return (
     <div className="card__content">
       <div className="card__price--text">PRICE:</div>

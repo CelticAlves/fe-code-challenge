@@ -6,7 +6,7 @@ import './cardHeader.css';
 
 type CardHeaderProps = { trend: 'UP' | 'DOWN' | null; id: string };
 
-const CardHeader: React.FC<CardHeaderProps> = React.memo(({ trend, id }: CardHeaderProps) => {
+const CardHeader = React.memo(({ trend, id }: CardHeaderProps) => {
   return (
     <div className="card__trend">
       <div>{id}</div>

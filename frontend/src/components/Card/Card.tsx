@@ -18,7 +18,7 @@ type CardProps = {
   symbolId: string | null;
 };
 
-const Card: React.FC<CardProps> = React.memo(({ id, onClick, price, symbolId }: CardProps) => {
+const Card = React.memo(({ id, onClick, price, symbolId }: CardProps) => {
   const { trend, companyName, industry, marketCap } = useAppSelector(
     (state) => state.stocks.entities[id]
   );

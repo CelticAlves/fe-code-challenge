@@ -13,7 +13,6 @@ type SymbolsGridProps = {
 };
 
 const SymbolsGrid = React.memo(({ onSymbolClick, symbolId }: SymbolsGridProps) => {
-  console.log('SymbolsGrid rendered');
   const stockSymbols = useAppSelector(selectors.selectStockIds);
   const prices = useAppSelector((state) => state.prices);
   const dispatch = useAppDispatch();
